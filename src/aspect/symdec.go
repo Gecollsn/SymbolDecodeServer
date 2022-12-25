@@ -1,0 +1,5 @@
+package aspect
+
+/*
+symbol decode
+*/
