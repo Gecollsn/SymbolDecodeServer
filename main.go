@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/gin-gonic/gin"
+	"2gte1.xyz/gcc/symparse/src/aspect/basic"
 )
 
 func env() {
@@ -17,12 +17,7 @@ func env() {
 	}
 }
 
-func serverRun() {
-	engine := gin.Default()
-	engine.Run()
-}
-
 func main() {
 	env()
-	serverRun()
+	basic.StartServer()
 }
