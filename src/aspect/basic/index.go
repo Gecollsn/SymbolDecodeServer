@@ -17,6 +17,7 @@ type HomePageServer struct {
 
 func (hps *HomePageServer) loadTemplates(eng *gin.Engine) {
 	eng.LoadHTMLGlob(filepath.Join(filcom.Dirname(), "templates/**/**/*.html"))
+	eng.Static("/assets", filepath.Join(filcom.Dirname(), "templates/home/assets"))
 }
 
 func (hps *HomePageServer) LaunchServer() {
