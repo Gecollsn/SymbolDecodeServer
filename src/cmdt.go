@@ -1,4 +1,4 @@
-package cmdt
+package server
 
 /*
 command line envionment

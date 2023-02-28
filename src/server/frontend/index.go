@@ -1,12 +1,14 @@
-package basic
+package frontend
 
 import (
 	"net/http"
 	"path/filepath"
+	"strconv"
 	"time"
 
-	"2gte1.xyz/gcc/symparse/src/aspect/api"
-	"2gte1.xyz/gcc/symparse/src/filcom"
+	"2gte1.xyz/gcc/symparse/src/env"
+	"2gte1.xyz/gcc/symparse/src/server/abs"
+	"2gte1.xyz/gcc/symparse/src/tools/pathabt"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,14 +18,16 @@ type HomePageServer struct {
 }
 
 func (hps *HomePageServer) loadTemplates(eng *gin.Engine) {
-	eng.LoadHTMLGlob(filepath.Join(filcom.Dirname(), "templates/**/**/*.html"))
-	eng.Static("/assets", filepath.Join(filcom.Dirname(), "templates/home/assets"))
+	eng.LoadHTMLGlob(filepath.Join(pathabt.Dirname(), "templates/**/*.html"))
+	eng.Static("/assets", filepath.Join(pathabt.Dirname(), "templates/home/assets"))
 }
 
 func (hps *HomePageServer) LaunchServer() {
-	EngGroup.Go(func() error {
+	cfg := env.FrontCfg()
+
+	abs.EngGroup.Go(func() error {
 		return (&http.Server{
-			Addr:         ":" + HomePagePort,
+			Addr:         ":" + strconv.Itoa(cfg.Port),
 			ReadTimeout:  5 * time.Second,
 			WriteTimeout: 10 * time.Second,
 			Handler: func() http.Handler {
@@ -39,6 +43,6 @@ func (hps *HomePageServer) LaunchServer() {
 	})
 }
 
-func NewHomePageServer() api.IServer {
+func NewHomePageServer() abs.IServer {
 	return new(HomePageServer)
 }

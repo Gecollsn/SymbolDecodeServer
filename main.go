@@ -4,11 +4,11 @@ import (
 	"flag"
 	"fmt"
 
-	"2gte1.xyz/gcc/symparse/src/aspect/basic"
+	"2gte1.xyz/gcc/symparse/src/server"
 )
 
 func env() {
-	var isDebug = flag.Bool("debug", false, "whether current in debug mode")
+	var isDebug = flag.Bool("debug", false, "Is current env in debug mode")
 
 	flag.Parse()
 
@@ -19,5 +19,5 @@ func env() {
 
 func main() {
 	env()
-	basic.StartServer()
+	server.StartServer()
 }

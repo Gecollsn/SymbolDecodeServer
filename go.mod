@@ -2,19 +2,12 @@ module 2gte1.xyz/gcc/symparse
 
 go 1.19
 
-require github.com/gin-gonic/gin v1.8.2
-
 require (
-	github.com/cosmtrek/air v1.40.4 // indirect
-	github.com/creack/pty v1.1.18 // indirect
-	github.com/fatih/color v1.13.0 // indirect
-	github.com/fsnotify/fsnotify v1.6.0 // indirect
-	github.com/imdario/mergo v0.3.13 // indirect
-	github.com/mattn/go-colorable v0.1.13 // indirect
-	github.com/pelletier/go-toml v1.9.5 // indirect
-	github.com/rs/cors v1.8.3 // indirect
-	github.com/rs/cors/wrapper/gin v0.0.0-20221003140808-fcebdb403f4d // indirect
+	github.com/gin-gonic/gin v1.8.2
+	github.com/rs/cors/wrapper/gin v0.0.0-20221003140808-fcebdb403f4d
 )
+
+require github.com/rs/cors v1.8.3 // indirect
 
 require (
 	github.com/gin-contrib/sse v0.1.0 // indirect

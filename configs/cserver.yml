@@ -1,0 +1,9 @@
+frontend:
+  port: 8080
+  readTimeout: 10000
+  writeTimeout: 10000
+
+backend:
+  port: 8081
+  readTimeout: 10000
+  writeTimeout: 1000

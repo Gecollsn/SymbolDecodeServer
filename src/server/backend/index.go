@@ -1,11 +1,11 @@
-package basic
+package backend
 
 import (
 	"fmt"
 	"net/http"
 	"time"
 
-	"2gte1.xyz/gcc/symparse/src/aspect/api"
+	"2gte1.xyz/gcc/symparse/src/server/abs"
 	"github.com/gin-gonic/gin"
 	wcors "github.com/rs/cors/wrapper/gin"
 )
@@ -15,9 +15,9 @@ type BackendPageServer struct {
 }
 
 func (bps *BackendPageServer) LaunchServer() {
-	EngGroup.Go(func() error {
+	abs.EngGroup.Go(func() error {
 		return (&http.Server{
-			Addr:         ":" + BackendPagePort,
+			Addr:         ":" + abs.BackendPagePort,
 			ReadTimeout:  5 * time.Second,
 			WriteTimeout: 10 * time.Second,
 			Handler: func() http.Handler {
@@ -27,10 +27,10 @@ func (bps *BackendPageServer) LaunchServer() {
 				//define cors rule
 				eng.Use(wcors.New(wcors.Options{
 					AllowedOrigins: []string{
-						fmt.Sprintf("http://%s:%s", MyIp, HomePagePort),
-						fmt.Sprintf("https://%s:%s", MyIp, HomePagePort),
-						fmt.Sprintf("http://%s:%s", MyDomain, HomePagePort),
-						fmt.Sprintf("https://%s:%s", MyDomain, HomePagePort),
+						fmt.Sprintf("http://%s:%s", abs.MyIp, abs.HomePagePort),
+						fmt.Sprintf("https://%s:%s", abs.MyIp, abs.HomePagePort),
+						fmt.Sprintf("http://%s:%s", abs.MyDomain, abs.HomePagePort),
+						fmt.Sprintf("https://%s:%s", abs.MyDomain, abs.HomePagePort),
 					},
 					AllowCredentials: true,
 					Debug:            true,
@@ -49,6 +49,6 @@ func (bps *BackendPageServer) LaunchServer() {
 	})
 }
 
-func NewBackendPageServer() api.IServer {
+func NewBackendPageServer() abs.IServer {
 	return new(BackendPageServer)
 }

@@ -1,4 +1,4 @@
-package aspect
+package symbol
 
 /*
 abi so lib uploader

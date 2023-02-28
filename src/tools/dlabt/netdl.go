@@ -1,4 +1,4 @@
-package tools
+package dlabt
 
 type DLProgress interface {
 	OnStart()

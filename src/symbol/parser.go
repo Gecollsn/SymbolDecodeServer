@@ -1,0 +1,5 @@
+package symbol
+
+func Parse() {
+
+}

@@ -1,4 +1,4 @@
-package filcom
+package pathabt
 
 import (
 	"path/filepath"
