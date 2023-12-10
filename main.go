@@ -3,11 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
-
-	"2gte1.xyz/gcc/symparse/src/server"
 )
 
-func env() {
+func main() {
 	var isDebug = flag.Bool("debug", false, "Is current env in debug mode")
 
 	flag.Parse()
@@ -15,9 +13,4 @@ func env() {
 	if *isDebug {
 		fmt.Println("In debug mode!")
 	}
-}
-
-func main() {
-	env()
-	server.StartServer()
 }

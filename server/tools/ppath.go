@@ -1,4 +1,4 @@
-package pathabt
+package tools
 
 import (
 	"path/filepath"

@@ -1,5 +1,0 @@
-package symbol
-
-func Parse() {
-
-}

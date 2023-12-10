@@ -1,10 +1,10 @@
-package env
+package server
 
 import (
 	"os"
 	"path/filepath"
 
-	"2gte1.xyz/gcc/symparse/src/tools/pathabt"
+	"gecollsn.it/symparse/server/tools"
 	"gopkg.in/yaml.v2"
 )
 
@@ -22,7 +22,7 @@ type ServerCfg struct {
 var cserver *CServer = &CServer{}
 
 func init() {
-	cf, _ := os.ReadFile(filepath.Join(pathabt.Dirname(), "..", "..", "configs", "cserver.yml"))
+	cf, _ := os.ReadFile(filepath.Join(tools.Dirname(), "..", "..", "configs", "cserver.yml"))
 	yaml.Unmarshal(cf, cserver)
 }
 
