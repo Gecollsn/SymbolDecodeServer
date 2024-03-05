@@ -1,3 +1,6 @@
 build/
 .air.toml
 .vscode/
+
+node_modules/
+web/dist

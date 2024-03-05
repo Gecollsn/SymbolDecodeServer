@@ -3,6 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+
+	"gecollsn.it/symparse/server"
 )
 
 func main() {
@@ -13,4 +15,6 @@ func main() {
 	if *isDebug {
 		fmt.Println("In debug mode!")
 	}
+
+	server.SymparseRun()
 }
