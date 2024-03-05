@@ -3,22 +3,21 @@
   "version": "1.0.0",
   "description": "A web server for parse c/c++ crash stack.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vite build",
-    "dev":"vite"
+    "dev": "vite"
   },
   "author": "gecollsn",
   "license": "MIT",
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.5.2",
+    "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
-    "install": "^0.13.0",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.7",
-    "vue": "^3.3.11"
+    "vite": "^5.1.5",
+    "vue": "^3.4.21"
   },
   "dependencies": {
-    "element-plus": "^2.4.3"
+    "element-plus": "^2.6.0"
   }
 }

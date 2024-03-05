@@ -1,2 +1,2 @@
 # About
-A web server for parse c/c++ crash stack.
+It's a web server for parsing c/c++ crash stacktrace.
