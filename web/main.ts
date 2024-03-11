@@ -5,5 +5,5 @@ import 'element-plus/dist/index.css'
 
 import Curtain from './Symparse.vue'
 
-Curtain.use(ElementPlus)
+// Curtain.use(ElementPlus)
 createApp(Curtain).mount('#container')
