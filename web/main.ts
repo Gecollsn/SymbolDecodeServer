@@ -3,7 +3,9 @@ import {createApp} from 'vue'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 
-import Curtain from './Symparse.vue'
+import Curtain from './Curtain.vue'
 
-// Curtain.use(ElementPlus)
-createApp(Curtain).mount('#container')
+let curtain = createApp(Curtain)
+
+curtain.use(ElementPlus)
+curtain.mount('#container')

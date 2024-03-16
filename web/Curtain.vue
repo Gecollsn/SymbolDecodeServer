@@ -3,7 +3,7 @@
 
 <template>
   <div style="color: black;height: 35px;">
-    Hello world, Yes
+    Hello world, Yes it's me.
   </div>
 </template>
 
