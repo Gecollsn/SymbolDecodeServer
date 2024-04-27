@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 
-	"gecollsn.it/symparse/server"
+	"gecollsn.it/symparse/server/google"
 )
 
 func main() {
@@ -16,5 +16,6 @@ func main() {
 		fmt.Println("In debug mode!")
 	}
 
-	server.SymparseRun()
+	// server.SymparseRun()
+	google.GetAndroidSDK().CheckSdkExists()
 }

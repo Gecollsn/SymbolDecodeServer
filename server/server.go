@@ -1,14 +1,12 @@
 package server
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
 func SymparseRun() {
-	fmt.Println("hello server")
 	r := gin.Default()
 	r.LoadHTMLGlob("web/dist/*.html")
 	r.Static("/assets", "./web/dist/assets")

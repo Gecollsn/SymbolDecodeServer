@@ -1,4 +1,4 @@
-package tools
+package utils
 
 type IZipToolbox interface {
 	Zip(folder string, ozip string)
