@@ -4,7 +4,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"gecollsn.it/symparse/server/tools"
+	"gecollsn.it/symparse/server/utils"
 	"gopkg.in/yaml.v2"
 )
 
@@ -22,7 +22,7 @@ type ServerCfg struct {
 var cserver *CServer = &CServer{}
 
 func init() {
-	cf, _ := os.ReadFile(filepath.Join(tools.Dirname(), "..", "..", "configs", "cserver.yml"))
+	cf, _ := os.ReadFile(filepath.Join(utils.Dirname(), "..", "..", "configs", "cserver.yml"))
 	yaml.Unmarshal(cf, cserver)
 }
 
